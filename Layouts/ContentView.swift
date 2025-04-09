@@ -8,17 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+	@State private var messageString = ""
+	
+	var body: some View {
+		VStack {
+			
+			Image(systemName: "smiley")
+				.resizable()
+				.scaledToFit()
+				//.scaledToFill()
+				.foregroundStyle(Color.yellow)
+				.containerRelativeFrame(.horizontal) { size, axis in
+					size * 0.5
+				}
+			
+			
+			Text(messageString)
+				.font(.largeTitle)
+				.fontWeight(.heavy)
+				.foregroundStyle(Color.red)
+				.padding()
+			HStack{
+				Button("Awesome"){
+					messageString = "Awesome!"
+				}
+				
+				Button("Great"){
+					messageString = "Great!"
+				}
+			}
+			.buttonStyle(.borderedProminent)
+		}
+		.border(Color.blue)
+		.padding()
+	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }
