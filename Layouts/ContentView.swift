@@ -17,9 +17,9 @@ struct ContentView: View {
 			Text("You are the best!")
 				.font(.largeTitle)
 				.fontWeight(.black)
-				.foregroundStyle(Color.green)
+				.foregroundStyle(.white)
 				.padding()
-				.background(.purple)
+				.background(.maroonBC )
 				//.padding(1)
 				.clipShape(RoundedRectangle(cornerRadius: 0.0))
 				
@@ -34,7 +34,7 @@ struct ContentView: View {
 				.padding()
 				.frame( height: 150)
 				.frame( maxWidth: .infinity)
-				.border(.orange, width: 2)
+				//.border(.orange, width: 2)
 				.cornerRadius(20)
 			
 			Spacer()
@@ -53,10 +53,13 @@ struct ContentView: View {
 				}
 			}
 			.buttonStyle(.borderedProminent)
-			.border(.purple, width: 5)
+			.padding()
+			//.border(.purple, width: 5)
 		}
 		//.border(Color.blue)
 		//.padding()
+		//.background(Color.yellow.opacity(0.4))
+		.background(Color.yellow.gradient)
 	}
 }
 
