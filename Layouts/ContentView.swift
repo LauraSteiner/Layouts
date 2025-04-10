@@ -9,38 +9,54 @@ import SwiftUI
 
 struct ContentView: View {
 	@State private var messageString = ""
+	@State private var offset = 0.0
 	
 	var body: some View {
 		VStack {
 			
-			Image(systemName: "smiley")
-				.resizable()
-				.scaledToFit()
-				//.scaledToFill()
-				.foregroundStyle(Color.yellow)
-				.containerRelativeFrame(.horizontal) { size, axis in
-					size * 0.5
-				}
-			
+			Text("You are the best!")
+				.font(.largeTitle)
+				.fontWeight(.black)
+				.foregroundStyle(Color.green)
+				.padding()
+				.background(.purple)
+				//.padding(1)
+				.clipShape(RoundedRectangle(cornerRadius: 0.0))
+				
+			Spacer()
 			
 			Text(messageString)
+				.multilineTextAlignment(.center)
+				.minimumScaleFactor(0.5)
 				.font(.largeTitle)
 				.fontWeight(.heavy)
 				.foregroundStyle(Color.red)
 				.padding()
+				.frame( height: 150)
+				.frame( maxWidth: .infinity)
+				.border(.orange, width: 2)
+				.cornerRadius(20)
+			
+			Spacer()
+			
 			HStack{
 				Button("Awesome"){
-					messageString = "Awesome!"
+					messageString = "You Are Awesome!"
+					offset -= 10.0
 				}
 				
+				Spacer()
+				
 				Button("Great"){
-					messageString = "Great!"
+					messageString = "You Are Great!"
+					offset += 10.0
 				}
 			}
 			.buttonStyle(.borderedProminent)
+			.border(.purple, width: 5)
 		}
-		.border(Color.blue)
-		.padding()
+		//.border(Color.blue)
+		//.padding()
 	}
 }
 
