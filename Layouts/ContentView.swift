@@ -59,7 +59,9 @@ struct ContentView: View {
 		//.border(Color.blue)
 		//.padding()
 		//.background(Color.yellow.opacity(0.4))
-		.background(Color.yellow.gradient)
+		.background(
+			Gradient(colors: 	[.orange, .yellow])
+		)
 	}
 }
 
