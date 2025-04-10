@@ -13,16 +13,6 @@ struct ContentView: View {
 	
 	var body: some View {
 		VStack {
-			
-			Text("You are the best!")
-				.font(.largeTitle)
-				.fontWeight(.black)
-				.foregroundStyle(.white)
-				.padding()
-				.background(.maroonBC )
-				//.padding(1)
-				.clipShape(RoundedRectangle(cornerRadius: 0.0))
-				
 			Spacer()
 			
 			Text(messageString)
@@ -59,9 +49,6 @@ struct ContentView: View {
 		//.border(Color.blue)
 		//.padding()
 		//.background(Color.yellow.opacity(0.4))
-		.background(
-			Gradient(colors: 	[.orange, .yellow])
-		)
 	}
 }
 
